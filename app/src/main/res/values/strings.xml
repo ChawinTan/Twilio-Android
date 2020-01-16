@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Twilio</string>
+    <string name="welcome">Welcome to Twilio test app</string>
+    <string name="phone_num">Enter num in e.164 format</string>
+</resources>
