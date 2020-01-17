@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.call:
-                Intent intent= new Intent(this, ClickToCAll.class);
-                startActivity(intent);
+                Intent callIntent= new Intent(this, ClickToCAll.class);
+                startActivity(callIntent);
                 return true;
             case R.id.sms:
-                Toast.makeText(this, "messaging", Toast.LENGTH_SHORT).show();
+                Intent smsIntent = new Intent(this, Sms.class);
+                startActivity(smsIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

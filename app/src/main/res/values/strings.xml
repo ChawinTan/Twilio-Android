@@ -2,4 +2,6 @@
     <string name="app_name">Twilio</string>
     <string name="welcome">Welcome to Twilio test app</string>
     <string name="phone_num">Enter num in e.164 format</string>
+    <string name="call_button">Click To Call</string>
+    <string name="call_sms">Click to Sms</string>
 </resources>
