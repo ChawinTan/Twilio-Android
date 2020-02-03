@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,8 +17,12 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ClickToCAll extends AppCompatActivity {
 
+    EditText editText;
     private RequestQueue mQueue;
 
     @Override
@@ -42,7 +47,17 @@ public class ClickToCAll extends AppCompatActivity {
         System.out.println("================== Click to call ========================");
         String url = "https://rackley-octopus-5384.twil.io/android-call";
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+        editText = (EditText) findViewById(R.id.call_num);
+        String phoneNum = editText.getText().toString();
+
+        System.out.println(phoneNum);
+
+        Map<String, String> params = new HashMap();
+        params.put("number", phoneNum);
+
+        JSONObject paramenters = new JSONObject(params);
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, paramenters, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
